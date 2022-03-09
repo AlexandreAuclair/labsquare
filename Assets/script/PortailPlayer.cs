@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortailPlayer : MonoBehaviour
+public class Portail : MonoBehaviour
 {
-    private Vector2 posDepart = new Vector2(-7, 0);
+    private Vector2 posDepart;
     
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,9 @@ public class PortailPlayer : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D  collider) {
-        if(collider.gameObject.tag == "Portail")
+    void OnTriggerEnter2D(Collider2D  collider) {
+        if(collider.tag == "Portail")
         {
-            Debug.Log("Yeeaaah");
             gameObject.transform.position = posDepart;
         }
     }
